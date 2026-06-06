@@ -3,24 +3,50 @@
 <head>
     <title>Мой первый сайт</title>
     <style>
+        /* Настройки всей страницы /
         body {
-            background-color: #f0f4f8; /* Мягкий серо-голубой цвет фона /
-            color: #102a43;            / Глубокий темно-синий цвет текста /
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; / Современный шрифт /
+            background-color: #f0f4f8; / Мягкий серо-голубой фон /
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;   / Центрируем карточку по горизонтали /
+            align-items: center;       / Центрируем карточку по вертикали /
+            min-height: 100vh;         / Растягиваем страницу на всю высоту экрана /
+        }
+
+        / Настройки нашей стильной белой карточки /
+        .card {
+            background-color: #ffffff; / Белый цвет внутри карточки /
             padding: 40px;
-            text-align: center;        / Выравнивание всего текста по центру /
+            border-radius: 16px;       / Закругление краев /
+            box-shadow: 0 10px 25px rgba(16, 42, 67, 0.1); / Мягкая дорогая тень /
+            max-width: 500px;          / Ограничение по ширине /
+            width: 100%;
+            text-align: center;        / Текст внутри карточки по центру /
         }
+
         h1 {
-            color: #627d98;            / Особый красивый цвет для заголовка */
-            font-size: 3rem;
+            color: #102a43;            / Глубокий темно-синий цвет для заголовка /
+            font-size: 2.5rem;
+            margin-top: 0;             / Убираем лишний отступ сверху /
+            margin-bottom: 15px;       / Отступ до подзаголовка /
         }
+
         p {
-            font-size: 1.2rem;
+            color: #627d98;            / Приглушенный цвет для обычного текста /
+            font-size: 1.1rem;
+            line-height: 1.6;          / Красивое расстояние между строками */
+            margin: 0;
         }
     </style>
 </head>
 <body>
-    <h1>Привет, мир!</h1>
-    <p>Это мой самый первый сайт, созданный своими руками.</p>
+
+    <!-- Это и есть наша белая карточка-контейнер -->
+    <div class="card">
+        <h1>Привет, мир!</h1>
+        <p>Это мой самый первый сайт, созданный своими руками. Теперь он выглядит как стильный современный лендинг!</p>
+    </div>
+
 </body>
 </html>
