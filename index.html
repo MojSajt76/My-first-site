@@ -38,6 +38,22 @@
         p {
             color: #627d98;
             line-height: 1.6;
+            margin-bottom: 25px; /* Сделали отступ снизу для кнопки /
+        }
+        / Стили для нашей новой кнопки /
+        .btn {
+            display: inline-block;
+            background-color: #0077ff; / Красивый синий цвет /
+            color: #ffffff;            / Белый текст /
+            padding: 12px 30px;
+            text-decoration: none;     / Убираем подчеркивание ссылки /
+            border-radius: 8px;        / Закругление краев кнопки /
+            font-weight: bold;
+            transition: background-color 0.3s ease; / Плавное изменение цвета /
+        }
+        / Эффект при наведении мышки на кнопку /
+        .btn:hover {
+            background-color: #0055cc; / Темно-синий цвет при наведении */
         }
     </style>
 </head>
@@ -47,6 +63,9 @@
         <img src="photo.jpg" alt="Моё фото" class="card-image">
         <h1>Привет, мир!</h1>
         <p>Это мой самый первый site, созданный своими руками. Теперь он выглядит как стильный современный лендинг!</p>
+        
+        <!-- Вот наша интерактивная кнопка -->
+        <a href="https://vk.com" target="_blank" class="btn">Написать мне во ВКонтакте</a>
     </div>
 
 </body>
