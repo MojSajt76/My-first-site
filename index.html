@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Мой первый сайт</title>
     <link rel="icon" type="image/png" href="favicon.png">
     <style>
@@ -12,14 +14,31 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
         }
+        /* Главный контейнер для объединения левой и правой части */
+        .main-container {
+            display: flex;
+            gap: 30px;
+            max-width: 800px;
+            width: 100%;
+            align-items: center;
+        }
+        /* Левая колонка с тремя кнопками */
+        .sidebar-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            min-width: 180px;
+        }
+        /* Правая колонка с карточкой */
         .card {
             background-color: #ffffff;
             padding: 40px;
             border-radius: 16px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            max-width: 500px;
-            width: 100%;
+            flex-grow: 1;
             text-align: center;
         }
         .card-image {
@@ -40,6 +59,7 @@
             line-height: 1.6;
             margin-bottom: 25px;
         }
+        /* Общие стили для всех кнопок */
         .btn {
             display: inline-block;
             background-color: #0077ff;
@@ -48,7 +68,10 @@
             text-decoration: none;
             border-radius: 8px;
             font-weight: bold;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            text-align: center;
+            border: none;
+            cursor: pointer;
         }
         .btn:visited {
             color: #ffffff;
@@ -57,16 +80,43 @@
         .btn:hover {
             background-color: #0055cc;
             color: #ffffff;
+            transform: translateY(-2px);
+        }
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        /* Адаптивность для мобильных экранов */
+        @media (max-width: 600px) {
+            .main-container {
+                flex-direction: column-reverse; /* На смартфонах кнопки будут снизу или сверху */
+                gap: 20px;
+            }
+            .sidebar-buttons {
+                width: 100%;
+            }
         }
     </style>
 </head>
 <body>
 
-    <div class="card">
-        <img src="photo.jpg" alt="Моё фото" class="card-image">
-        <h1>Привет, мир!</h1>
-        <p>Это мой самый первый site, созданный своими руками. Теперь он выглядит как стильный современный лендинг!</p>
-        <a href="https://vk.com" target="_blank" class="btn">Написать мне во ВКонтакте</a>
+    <div class="main-container">
+        
+        <!-- Левая панель с новыми кнопками -->
+        <div class="sidebar-buttons">
+            <a href="#" class="btn">Вчера</a>
+            <a href="#" class="btn">Сегодня</a>
+            <a href="#" class="btn">Завтра</a>
+        </div>
+
+        <!-- Правая панель с твоей карточкой -->
+        <div class="card">
+            <img src="photo.jpg" alt="Моё фото" class="card-image">
+            <h1>Привет, мир!</h1>
+            <p>Это мой самый первый site, созданный своими руками. Теперь он выглядит как стильный современный лендинг!</p>
+            <a href="https://vk.com" target="_blank" class="btn">Написать мне во ВКонтакте</a>
+        </div>
+
     </div>
 
 </body>
