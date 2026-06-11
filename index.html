@@ -68,7 +68,7 @@
             text-decoration: none;
             border-radius: 8px;
             font-weight: bold;
-            transition: background-color 0.3s ease, transform 0.2s ease;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
             text-align: center;
             border: none;
             cursor: pointer;
@@ -77,27 +77,25 @@
             color: #ffffff;
             background-color: #0077ff;
         }
+        /* Эффект по умолчанию для кнопки ВК */
         .btn:hover {
             background-color: #0055cc;
             color: #ffffff;
             transform: translateY(-2px);
         }
-        /* Эффект для трех левых кнопок (увеличение во все стороны на 7%) */
+        /* Эффект для трех левых кнопок (увеличение во все стороны) */
         .sidebar-buttons .btn-scale:hover {
-            transform: scale(1.07); /* Увеличивает кнопку со всех сторон */
-            box-shadow: 0 5px 15px rgba(0,119,255,0.3); /* Добавляет красивое неоновое свечение */
+            transform: scale(1.07); 
+            box-shadow: 0 5px 15px rgba(0,119,255,0.3); 
         }
         .btn:active {
             transform: translateY(0) scale(1);
-        }
-        .btn:active {
-            transform: translateY(0);
         }
 
         /* Адаптивность для мобильных экранов */
         @media (max-width: 600px) {
             .main-container {
-                flex-direction: column-reverse; /* На смартфонах кнопки будут снизу или сверху */
+                flex-direction: column-reverse; 
                 gap: 20px;
             }
             .sidebar-buttons {
@@ -111,10 +109,11 @@
     <div class="main-container">
         
         <!-- Левая панель с новыми кнопками -->
+        <!-- Добавили класс btn-scale для каждой кнопки -->
         <div class="sidebar-buttons">
-            <a href="#" class="btn">Вчера</a>
-            <a href="#" class="btn">Сегодня</a>
-            <a href="#" class="btn">Завтра</a>
+            <a href="#" class="btn btn-scale">Вчера</a>
+            <a href="#" class="btn btn-scale">Сегодня</a>
+            <a href="#" class="btn btn-scale">Завтра</a>
         </div>
 
         <!-- Правая панель с твоей карточкой -->
