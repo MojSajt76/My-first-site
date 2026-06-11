@@ -82,6 +82,14 @@
             color: #ffffff;
             transform: translateY(-2px);
         }
+        /* Эффект для трех левых кнопок (увеличение во все стороны на 7%) */
+        .sidebar-buttons .btn-scale:hover {
+            transform: scale(1.07); /* Увеличивает кнопку со всех сторон */
+            box-shadow: 0 5px 15px rgba(0,119,255,0.3); /* Добавляет красивое неоновое свечение */
+        }
+        .btn:active {
+            transform: translateY(0) scale(1);
+        }
         .btn:active {
             transform: translateY(0);
         }
