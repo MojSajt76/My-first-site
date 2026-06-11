@@ -58,6 +58,8 @@
             color: #627d98;
             line-height: 1.6;
             margin-bottom: 25px;
+            /* Плавный переход при изменении текста */
+            transition: opacity 0.3s ease; 
         }
         /* Общие стили для всех кнопок */
         .btn {
@@ -109,23 +111,38 @@
     <div class="main-container">
         
         <!-- Левая панель с новыми кнопками -->
-        <!-- Добавили класс btn-scale для каждой кнопки -->
+        <!-- Каждой кнопке добавлено событие onclick для смены текста -->
         <div class="sidebar-buttons">
-            <a href="#" class="btn btn-scale">Вчера</a>
-            <a href="#" class="btn btn-scale">Сегодня</a>
-            <a href="#" class="btn btn-scale">Завтра</a>
+            <button class="btn btn-scale" onclick="changeText('То, что было!')">Вчера</button>
+            <button class="btn btn-scale" onclick="changeText('ТО, что есть!')">Сегодня</button>
+            <button class="btn btn-scale" onclick="changeText('То, будет!')">Завтра</button>
         </div>
 
         <!-- Правая панель с твоей карточкой -->
         <div class="card">
             <img src="photo.jpg" alt="Моё фото" class="card-image">
             <h1>Привет, мир!</h1>
-            <p>Это мой самый первый site, созданный своими руками. Теперь он выглядит как стильный современный лендинг!</p>
+            <!-- Добавили id="info-text", чтобы скрипт находил именно этот абзац -->
+            <p id="info-text">Это мой самый первый site, созданный своими руками. Теперь он выглядит как стильный современный лендинг!</p>
             <a href="https://vk.com" target="_blank" class="btn">Написать мне во ВКонтакте</a>
         </div>
 
     </div>
 
+    <!-- Скрипт, который меняет текст при нажатии на кнопки -->
+    <script>
+        function changeText(newText) {
+            const textElement = document.getElementById('info-text');
+            textElement.style.opacity = 0; // Сначала делаем текст невидимым
+            
+            setTimeout(() => {
+                textElement.textContent = newText; // Меняем текст
+                textElement.style.opacity = 1; // Делаем его плавно видимым обратно
+            }, 200); // Небольшая задержка в 200 миллисекунд для красоты эффекта
+        }
+    </script>
+
 </body>
 </html>
+
 
